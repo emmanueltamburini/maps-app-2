@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { Map } from 'mapbox-gl';
+import { Map, Popup, Marker } from 'mapbox-gl';
 import { PlacesService } from '../../services';
 
 @Component({
@@ -29,6 +29,17 @@ export class MapViewComponent implements AfterViewInit {
     map.on('style.load', () => {
       map.setFog({});
     });
+
+    const popup = new Popup()
+      .setHTML(`
+        <h6>I am here</h6>
+        <span>This is my point in the world</span>
+    `);
+
+    const marker = new Marker({color: 'red'})
+      .setLngLat(this.placesService.userLocation)
+      .setPopup(popup)
+      .addTo(map);
   }
 
 }
