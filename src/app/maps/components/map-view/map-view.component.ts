@@ -36,7 +36,7 @@ export class MapViewComponent implements AfterViewInit {
         <span>This is my point in the world</span>
     `);
 
-    const marker = new Marker({color: 'red'})
+    new Marker({color: 'red'})
       .setLngLat(this.placesService.userLocation)
       .setPopup(popup)
       .addTo(map);
