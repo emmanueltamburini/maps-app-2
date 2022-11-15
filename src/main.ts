@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import Mapboxgl from 'mapbox-gl';
 
-Mapboxgl.accessToken = 'pk.eyJ1IjoiZW1tYW51ZWx0YW1idXJpbmkiLCJhIjoiY2xhaWMwaDFyMDEzYzNvcG4zanlpajlnYyJ9.R_S_tgWq1-YwfIXf2JY5pQ';
+Mapboxgl.accessToken = environment.apiKey;
 
 if (!navigator.geolocation) {
   alert('Gelocation is not supported');

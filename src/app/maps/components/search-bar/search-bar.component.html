@@ -1,5 +1,11 @@
 <div class="search-container">
-  <input type="text" class="form-control" placeholder="Search place ...">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search place ..."
+    #query
+    (keyup)="onKeyUp(query.value)"
+  >
 
   <app-search-result></app-search-result>
 </div>
