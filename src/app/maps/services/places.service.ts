@@ -55,4 +55,8 @@ export class PlacesService {
         this.mapService.createMarkersFromPlaces(this.places, this.userLocation!);
       });
   }
+
+  public deletePlaces(): void {
+    this.places = [];
+  }
 }
