@@ -36,6 +36,12 @@ export class PlacesService {
   }
 
   public getPlacesByQuery(query: string = '') {
+    if (query.length === 0) {
+      this.isLoadingPlaces = false;
+      this.places = [];
+      return;
+    }
+
     if (!this.userLocation) {
       throw Error('There is not location user');
     }
