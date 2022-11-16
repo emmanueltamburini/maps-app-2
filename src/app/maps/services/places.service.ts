@@ -29,7 +29,6 @@ export class PlacesService {
         },
         (err) => {
           alert('It could not get the current geolocation');
-          console.log(err);
           reject();
         }
       )
